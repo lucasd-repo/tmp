@@ -13,7 +13,9 @@ spec:
         app: argo-test
     spec:
       containers:
-        - name: nginx
-          image: nginx:alpine
+        - name: echoserver
+          image: hashicorp/http-echo:1.0
+          args:
+            - "-text=GitOps funcionando!"
           ports:
-            - containerPort: 80
+            - containerPort: 5678
